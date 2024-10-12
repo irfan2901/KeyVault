@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".fragments.ProfileFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardview"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:backgroundTint="@color/card_item"
+        app:cardCornerRadius="80dp"
+        app:cardElevation="6dp">
+
+        <TextView
+            android:id="@+id/cardUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_bold"
+            android:text="M"
+            android:textSize="38sp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/accountUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Name"
+        android:textSize="25sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mail_24px"
+            android:layout_marginStart="10dp"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/accountEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/noto_sans_semi_bold"
+            android:text="Email"
+            android:textSize="20sp"
+            android:padding="10dp"
+            app:layout_constraintStart_toEndOf="@id/mail"
+            app:layout_constraintBottom_toBottomOf="@id/mail"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/changeThemeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true">
+
+            <ImageView
+                android:id="@+id/dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="theme"
+                android:scaleType="centerCrop"
+                android:padding="10dp"
+                android:src="@drawable/dark_mode_24px"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_sans_semi_bold"
+            android:text="Change theme"
+            android:textSize="20sp"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/dark"
+            app:layout_constraintStart_toEndOf="@id/dark"
+            app:layout_constraintTop_toTopOf="@id/dark" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/biometricSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/noto_sans_semi_bold"
+        android:padding="10dp"
+        android:text="Lock this app"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/buttons"
+        android:text="Logout" />
+
+</LinearLayout>

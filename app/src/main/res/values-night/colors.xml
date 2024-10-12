@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_bg">#121212</color>
+    <color name="toolbar">#595f5b</color>
+    <color name="card_unselected">#ccd5ae</color>
+    <color name="card_selected">#66cfd5</color>
+    <color name="add_card_bg">#1E1E1E</color>
+    <color name="card_item">#1E1E1E</color>
+    <color name="text_color">#000000</color>
+</resources>

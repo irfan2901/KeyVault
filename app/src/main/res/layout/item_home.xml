@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp"
+    android:id="@+id/cardView"
+    android:backgroundTint="@color/card_item"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_margin="7dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/homePasswordImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/noto_sans_semi_bold"
+            android:padding="3dp"
+            android:text="M"
+            android:textColor="@color/card_heading_text"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/homeAccountName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/homeAccountName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Account name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginStart="8dp"
+            android:padding="5dp"
+            app:layout_constraintTop_toTopOf="@id/homePasswordImage"
+            app:layout_constraintStart_toEndOf="@id/homePasswordImage" />
+
+        <TextView
+            android:id="@+id/homeAccountId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="8dp"
+            android:text="Id"
+            android:textSize="15sp"
+            android:fontFamily="@font/noto_sans_semi_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/homeAccountName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/homeAccountName"
+            app:layout_constraintTop_toBottomOf="@id/homeAccountName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

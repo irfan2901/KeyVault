@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.keyvault.keyvault.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_saveOrUpdatePasswordFragment"
+            app:destination="@id/saveOrUpdatePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordsFragment"
+        android:name="com.keyvault.keyvault.fragments.PasswordsFragment"
+        android:label="fragment_passwords"
+        tools:layout="@layout/fragment_passwords" >
+        <action
+            android:id="@+id/action_passwordsFragment_to_saveOrUpdatePasswordFragment"
+            app:destination="@id/saveOrUpdatePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.keyvault.keyvault.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/saveOrUpdatePasswordFragment"
+        android:name="com.keyvault.keyvault.fragments.SaveOrUpdatePasswordFragment"
+        android:label="fragment_save_or_update_password"
+        tools:layout="@layout/fragment_save_or_update_password" >
+        <argument
+            android:name="Password"
+            android:defaultValue="@null"
+            app:nullable="true"
+            app:argType="com.keyvault.keyvault.models.PasswordModel" />
+    </fragment>
+</navigation>

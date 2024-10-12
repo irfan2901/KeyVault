@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="card_item">#33bfc7</color>
+    <color name="card_heading_text">#F9563E</color>
+    <color name="buttons">#66cfd5</color>
+    <color name="toolbar">#00afb9</color>
+    <color name="add_card_bg">#cceff1</color>
+    <color name="app_bg">#e6f7f8</color>
+    <color name="card_unselected">#ccd5ae</color>
+    <color name="card_selected">#66cfd5</color>
+    <color name="text_color">#FFFFFF</color>
+</resources>
