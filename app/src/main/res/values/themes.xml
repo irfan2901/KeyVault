@@ -3,6 +3,14 @@
     <style name="Base.Theme.KeyVault" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="textInputStyle">@style/CustomTextInputEditText</item>
+    </style>
+
+    <style name="CustomTextInputEditText" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxStrokeColor">@color/buttons</item>
+        <item name="hintEnabled">true</item>
+        <item name="hintTextColor">@color/card_selected</item>
+        <item name="hintAnimationEnabled">true</item>
     </style>
 
     <style name="Theme.KeyVault" parent="Base.Theme.KeyVault" />

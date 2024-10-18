@@ -66,4 +66,6 @@ dependencies {
     implementation(libs.androidx.biometric.ktx)
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.swiperefreshlayout)
+    implementation(libs.androidx.datastore.preferences)
 }

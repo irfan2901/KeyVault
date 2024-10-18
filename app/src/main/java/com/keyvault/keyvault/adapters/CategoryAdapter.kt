@@ -21,9 +21,10 @@ class CategoryAdapter(private val onCategoryItemClicked: (CategoryModel) -> Unit
             binding.categoryName.text = categoryModel.categoryName
 
             when (categoryModel.categoryName) {
+                "All" -> binding.headerImage.setImageResource(R.drawable.all)
                 "Social Media" -> binding.headerImage.setImageResource(R.drawable.social_media)
                 "Entertainment" -> binding.headerImage.setImageResource(R.drawable.entertainment)
-                "E-Commerce" -> binding.headerImage.setImageResource(R.drawable.shopping_online)
+                "E-commerce" -> binding.headerImage.setImageResource(R.drawable.shopping_online)
                 "Banking" -> binding.headerImage.setImageResource(R.drawable.banking)
                 "Work" -> binding.headerImage.setImageResource(R.drawable.work)
                 "Travel" -> binding.headerImage.setImageResource(R.drawable.travel)

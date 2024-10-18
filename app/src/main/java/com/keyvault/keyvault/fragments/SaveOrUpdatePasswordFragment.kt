@@ -52,6 +52,7 @@ class SaveOrUpdatePasswordFragment : Fragment() {
         observeDataChanges()
         fetchCurrentUser()
         showAllPasswords()
+        showOrHideDeleteButton()
 
         binding.backArrow.setOnClickListener {
             navController.popBackStack()
@@ -96,6 +97,11 @@ class SaveOrUpdatePasswordFragment : Fragment() {
     private fun showRecyclerView() {
         val password = args.Password
         binding.categoryRecyclerView.visibility = if (password == null) View.VISIBLE else View.GONE
+    }
+
+    private fun showOrHideDeleteButton() {
+        val password = args.Password
+        binding.deleteButton.visibility = if (password == null) View.GONE else View.VISIBLE
     }
 
     private fun setupRecyclerView() {

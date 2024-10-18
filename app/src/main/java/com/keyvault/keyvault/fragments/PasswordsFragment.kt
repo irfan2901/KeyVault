@@ -79,6 +79,8 @@ class PasswordsFragment : Fragment() {
         categoryAdapter = CategoryAdapter { categoryModel ->
             categoryName = categoryModel.categoryName.toString()
             if (categoryName == "All") {
+                binding.notFoundLayout.visibility = View.GONE
+                binding.passwordsRecyclerView.visibility = View.VISIBLE
                 clearCategoryFilter()
             } else {
                 observeSpecificCategoryPasswords(categoryName!!)
@@ -114,8 +116,15 @@ class PasswordsFragment : Fragment() {
             passwordViewModel.showAllPasswords(requireContext(), userId!!)
             lifecycleScope.launch {
                 passwordViewModel.passwords.collect { passwords ->
-                    passwordAdapter.submitList(passwords.toList())
-                    binding.passwordsRecyclerView.scrollToPosition(0)
+                    if (passwords.isEmpty()) {
+                        binding.notFoundLayout.visibility = View.VISIBLE
+                        binding.passwordsRecyclerView.visibility = View.GONE
+                    } else {
+                        binding.notFoundLayout.visibility = View.GONE
+                        binding.passwordsRecyclerView.visibility = View.VISIBLE
+                        passwordAdapter.submitList(passwords.toList())
+                        binding.passwordsRecyclerView.scrollToPosition(0)
+                    }
                 }
             }
         }
@@ -125,8 +134,15 @@ class PasswordsFragment : Fragment() {
         passwordViewModel.getSpecificCategoryPasswords(requireContext(), categoryName)
         lifecycleScope.launch {
             passwordViewModel.categoryPasswords.collect { categoryPasswords ->
-                passwordAdapter.submitList(categoryPasswords.toList())
-                binding.passwordsRecyclerView.scrollToPosition(0)
+                if (categoryPasswords.isEmpty()) {
+                    binding.notFoundLayout.visibility = View.VISIBLE
+                    binding.passwordsRecyclerView.visibility = View.GONE
+                } else {
+                    binding.notFoundLayout.visibility = View.GONE
+                    binding.passwordsRecyclerView.visibility = View.VISIBLE
+                    passwordAdapter.submitList(categoryPasswords.toList())
+                    binding.passwordsRecyclerView.scrollToPosition(0)
+                }
             }
         }
     }

@@ -64,6 +64,12 @@ class HomeFragment : Fragment() {
         binding.floatingActionButton.setOnClickListener {
             navController.navigate(HomeFragmentDirections.actionHomeFragmentToSaveOrUpdatePasswordFragment())
         }
+
+        binding.swipeRefresh.setOnRefreshListener {
+            binding.swipeRefresh.isRefreshing = true
+            fetchCurrentUser()
+            binding.swipeRefresh.isRefreshing = false
+        }
     }
 
     override fun onResume() {
